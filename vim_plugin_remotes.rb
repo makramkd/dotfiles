@@ -15,8 +15,16 @@ CONFIG_PATH = ".git/config"
 vim_bundle_path = ARGV[0]
 directories = Dir.entries(vim_bundle_path).select {|entry| File.directory? File.join(vim_bundle_path,entry) and !(entry =='.' || entry == '..') }
 
+remotes = []
 directories.each do |directory|
   config_hash = gitconfig_parse(File.open(vim_bundle_path + "/" + directory + "/" + CONFIG_PATH))
   remote_url = config_hash[REMOTE_ORIGIN_KEY]["url"]
-  p remote_url
+  remotes << remote_url
+end
+
+output_file = "installed_plugins.txt"
+File.open(output_file, 'w') do |f|
+  remotes.each do |remote|
+    f.puts remote
+  end
 end
