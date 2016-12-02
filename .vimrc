@@ -98,3 +98,9 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+
+" stuff
+au BufReadPost *.god set syntax=ruby
+au BufReadPost Vagrantfile set syntax=ruby
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
