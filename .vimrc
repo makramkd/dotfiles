@@ -102,5 +102,20 @@ let g:solarized_termtrans=1
 " stuff
 au BufReadPost *.god set syntax=ruby
 au BufReadPost Vagrantfile set syntax=ruby
+au BufReadPost *.ru set syntax=ruby
+au BufReadPost *.zsh-theme set syntax=zsh
+au BufReadPost *.erb set syntax=ruby
+au BufReadPost Gemfile set syntax=ruby
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Rainbow parens only for clj files
+au VimEnter *.clj RainbowParenthesesToggle
+au Syntax *.clj RainbowParenthesesLoadRound
+au Syntax *.clj RainbowParenthesesLoadSquare
+au Syntax *.clj RainbowParenthesesLoadBraces
+
+" put swp files in other directories
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
