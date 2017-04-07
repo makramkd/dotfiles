@@ -32,6 +32,7 @@ set visualbell
 set encoding=utf-8
 
 " Whitespace
+" Override this stuff for specific filetypes (e.g python)
 set wrap
 set formatoptions=tcqrn1
 set tabstop=2
@@ -95,9 +96,10 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
+
+" Get the spring-night.vim colors file and 
+" place it in ~/.vim/colors
+colorscheme spring-night
 
 " stuff
 au BufReadPost *.god set syntax=ruby
@@ -119,3 +121,14 @@ au Syntax *.clj RainbowParenthesesLoadBraces
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+
+" Rust stuff
+command Cargo !cargo build
+command CargoRun !cargo run
+command CargoTest !cargo test
+
+" From vim-airline-themes repository
+let g:airline_theme='aurora'
+
+" A lite python-mode
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
