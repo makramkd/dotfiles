@@ -132,3 +132,10 @@ let g:airline_theme='aurora'
 
 " A lite python-mode
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
+
+" C++11 options for syntastic
+let g:syntastic_cpp_compiler='clang++'
+let g:syntastic_cpp_compiler_options=' -std=c++14'
+
+" Fuzzy search buffers with ctrl-r
+map <c-r> :CtrlPBuffer<CR>
