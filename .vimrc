@@ -137,5 +137,20 @@ au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab au
 let g:syntastic_cpp_compiler='clang++'
 let g:syntastic_cpp_compiler_options=' -std=c++14'
 
-" Fuzzy search buffers with ctrl-r
-map <c-r> :CtrlPBuffer<CR>
+
+" Easier split navigation
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-h> <c-w><c-h>
+
+" More intuitive split direction
+set splitbelow
+set splitright
+
+" Custom ignores for ctrl-p
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[/\]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|pyc)$'
+  \ }
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
