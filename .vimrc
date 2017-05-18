@@ -1,3 +1,6 @@
+" Set leader
+let mapleader=','
+
 " Plugins ftw
 execute pathogen#infect()
 
@@ -147,10 +150,9 @@ nnoremap <c-h> <c-w><c-h>
 set splitbelow
 set splitright
 
-" Custom ignores for ctrl-p
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[/\]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|pyc)$'
-  \ }
+" <c-p> options
+let g:ctrlp_regexp = 1
+let g:ctrlp_clear_cache_on_exit = 0
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" Custom ignores for ctrl-p
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
