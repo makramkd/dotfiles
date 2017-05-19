@@ -156,3 +156,12 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " Custom ignores for ctrl-p
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Insert mode mappings
+imap <C-s> <Esc>:w<CR>a
+
+" Normal mode mappings
+map <C-s> :w<CR>
+
+" Bufferline
+let g:bufferline_echo = 0
