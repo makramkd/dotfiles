@@ -37,3 +37,7 @@ bindkey -e
 # NOTE: overrides vanilla C-b and C-f (backward-char and forward-char)
 bindkey '^B' backward-word
 bindkey '^F' forward-word
+
+
+# Misc things
+stty -ixon
