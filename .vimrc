@@ -184,3 +184,6 @@ imap <F2> <c-o><F2>
 " Cycle through open buffers
 nmap <M-Left> :bp<CR>
 nmap <M-Right> :bn<CR>
+
+" NERDTreeIgnore
+let NERDTreeIgnore=['\.pyc$']
