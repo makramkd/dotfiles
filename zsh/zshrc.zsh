@@ -37,5 +37,11 @@ bindkey '^F' forward-word
 stty -ixon
 
 # Custom aliases and functions
-source $dir/rails.zsh
-source $dir/git.zsh
+local -a plugins
+plugins=(rails.zsh git.zsh utility.zsh)
+
+# Don't loop through current directory because we'd recursively 
+# source this file
+for i in $plugins; do
+  source $dir/$i end
+done
