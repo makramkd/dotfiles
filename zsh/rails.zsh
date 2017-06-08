@@ -13,9 +13,14 @@ alias brsp="bundle exec rspec"
 
 # Macro to prepare a rails project to be used via
 # console or rails server
-function rp() {
+function prep() {
   git pull
   bundle install
   bundle exec rake db:migrate
   echo 'Done! Project Ready!'
+}
+
+function rrun() {
+  prep
+  bundle exec rails server
 }
