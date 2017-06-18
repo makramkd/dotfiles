@@ -36,6 +36,23 @@ bindkey '^F' forward-word
 # Misc things
 stty -ixon
 
+# History
+HISTSIZE=100000
+
+# syntax highlighting for less and cat
+# do: brew install highlight
+# or: brew install source-highlight
+# uncomment below to use source-highlight
+# export LESSOPEN="| src-hilite-lesspipe.sh %s"
+# This uses highlight
+export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style solarized-light"
+export LESS=" -R "
+alias less="less -m -N -g -i -J --underline-special --SILENT"
+alias more="less"
+
+# Use highlight in place of cat
+alias cat="highlight $1 --out-format xterm256 --quiet --force --style solarized-light"
+
 # Custom aliases and functions
 local -a plugins
 plugins=(rails.zsh git.zsh utility.zsh)
