@@ -45,7 +45,7 @@ HISTSIZE=100000
 # uncomment below to use source-highlight
 # export LESSOPEN="| src-hilite-lesspipe.sh %s"
 # This uses highlight
-export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style solarized-light"
+export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style breeze"
 export LESS=" -R "
 alias less="less -m -N -g -i -J --underline-special --SILENT"
 alias more="less"

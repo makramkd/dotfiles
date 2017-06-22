@@ -187,3 +187,6 @@ nmap <M-Right> :bn<CR>
 
 " NERDTreeIgnore
 let NERDTreeIgnore=['\.pyc$']
+
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
