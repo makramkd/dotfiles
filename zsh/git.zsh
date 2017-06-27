@@ -16,3 +16,8 @@ alias gds="git diff --staged"
 
 # i.e git push this the fuck outta here
 alias gpfoh="git push -f origin head"
+
+function master {
+  gco master
+  ggpull
+}
