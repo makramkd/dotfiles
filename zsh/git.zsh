@@ -21,3 +21,8 @@ function master {
   gco master
   ggpull
 }
+
+function rebase {
+  gfp
+  grb origin/master
+}
