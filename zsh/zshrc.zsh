@@ -48,6 +48,7 @@ HISTSIZE=100000
 export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style breeze"
 export LESS=" -R "
 alias less="less -m -N -g -i -J --underline-special --SILENT"
+alias rless="less +G"
 alias more="less"
 
 # Use highlight in place of cat
