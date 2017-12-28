@@ -6,6 +6,28 @@
 
 dir="$(dirname "$0")"
 
+autoload -U compinit && compinit
+
+# Set a basic PS1
+PROMPT="Ξ %20<...<%~%<< %# "
+
+# Compinstall basics
+fpath=(/usr/local/share/zsh-completions $fpath)
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' use-compctl false
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+setopt appendhistory autocd beep extendedglob nomatch notify
+bindkey -e
+
 # Exports
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
@@ -32,7 +54,6 @@ bindkey -e
 bindkey '^B' backward-word
 bindkey '^F' forward-word
 
-
 # Misc things
 stty -ixon
 
@@ -45,7 +66,7 @@ HISTSIZE=100000
 # uncomment below to use source-highlight
 # export LESSOPEN="| src-hilite-lesspipe.sh %s"
 # This uses highlight
-export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style breeze"
+export LESSOPEN="| $(which highlight) %s --out-format xterm256 --quiet --force --style solarized-dark"
 export LESS=" -R "
 alias less="less -m -N -g -i -J --underline-special --SILENT"
 alias rless="less +G"

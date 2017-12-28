@@ -190,3 +190,10 @@ let NERDTreeIgnore=['\.pyc$']
 
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
+
+set mouse=a
+
+" Override tag stack pop
+nmap <c-t> :NERDTreeToggle<CR>
+
+let g:pymode_python = 'python3'
