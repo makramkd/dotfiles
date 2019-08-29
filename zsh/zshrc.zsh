@@ -23,13 +23,12 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory autocd beep extendedglob nomatch notify
+unsetopt share_history
 bindkey -e
 
 # Exports
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
-
-export EDITOR=vim
 
 # Key bindings
 # For a comprehensive guide, see http://zsh.sourceforge.net/Guide/zshguide04.html
